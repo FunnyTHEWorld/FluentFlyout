@@ -37,18 +37,23 @@ public partial class NextUpWindow : MicaWindow
 
         var titleWidth = StringWidth.GetStringWidth(title);
         var artistWidth = StringWidth.GetStringWidth(artist);
-        
-        if (titleWidth > artistWidth) Width = titleWidth + 142;
-        else Width = artistWidth + 142;
+
+        string UpNextText = Application.Current.FindResource("NextUpWindow_UpNextText") as string;
+        var UpNextTitleWidth = StringWidth.GetStringWidth(UpNextText) + 14;
+        if (titleWidth > artistWidth) Width = titleWidth + UpNextTitleWidth + 86;
+        else Width = artistWidth + UpNextTitleWidth + 86;
         if (Width > 400) Width = 400; // max width to prevent window from being too wide
+        TitleTrans.To = -(Width / 2) + (UpNextTitleWidth / 2) + 12;
+        BackgroundTrans.To = -(Width / 2);
         SongTitle.Text = title;
         SongArtist.Text = artist;
         SongImage.ImageSource = thumbnail;
-        if (SongImage.ImageSource == null) SongImagePlaceholder.Visibility = Visibility.Visible;
-        else SongImagePlaceholder.Visibility = Visibility.Collapsed;
+        if (SongImage.ImageSource == null)
+            SongImagePlaceholder.Visibility = Visibility.Visible;
+        else { SongImagePlaceholder.Visibility = Visibility.Collapsed; BackgroundGradientStopColor.Color = ImageHelper.GetDominantColor(thumbnail); }
         Show();
-
         mainWindow.OpenAnimation(this);
+
 
         async void wait()
         {

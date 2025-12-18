@@ -119,13 +119,13 @@ public partial class UserSettings : ObservableObject
                 NextUpDuration = result switch
                 {
                     > 10000 => 10000,
-                    < 0 => 0,
+                    < 3000 => 3000,
                     _ => result
                 };
             }
             else
             {
-                NextUpDuration = 2000;
+                NextUpDuration = 4000;
             }
 
             OnPropertyChanged();
@@ -360,7 +360,7 @@ public partial class UserSettings : ObservableObject
         Startup = true;
         Duration = 3000;
         NextUpEnabled = false;
-        NextUpDuration = 2000;
+        NextUpDuration = 4000;
         NIconLeftClick = 0;
         CenterTitleArtist = false;
         FlyoutAnimationEasingStyle = 2;
