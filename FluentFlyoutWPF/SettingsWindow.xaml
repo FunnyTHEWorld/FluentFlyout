@@ -326,7 +326,11 @@
                                     <TextBlock Text="{DynamicResource TaskbarWidgetClickableDescription}" FontSize="12" Opacity="0.5"/>
                                 </StackPanel>
                             </ui:CardControl.Header>
-                            <controls:ToggleSwitch IsChecked="{Binding TaskbarWidgetClickable, Mode=TwoWay}" IsEnabled="{Binding IsPremiumUnlocked}"/>
+                            <ComboBox SelectedIndex="{Binding TaskbarWidgetTriggerType, Mode=TwoWay}" IsEnabled="{Binding IsPremiumUnlocked}">
+                                <ComboBoxItem Content="{DynamicResource TaskbarWidgetTrigger_None}"/>
+                                <ComboBoxItem Content="{DynamicResource TaskbarWidgetTrigger_OnHover}"/>
+                                <ComboBoxItem Content="{DynamicResource TaskbarWidgetTrigger_Clicked}"/>
+                            </ComboBox>
                         </ui:CardControl>
                         <ui:CardControl Grid.Row="7" Icon="{ui:SymbolIcon ColorBackground24}" Margin="0,0,0,3">
                             <ui:CardControl.Header>

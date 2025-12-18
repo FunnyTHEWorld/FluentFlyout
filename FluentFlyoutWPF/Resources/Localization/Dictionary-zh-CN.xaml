@@ -110,8 +110,11 @@
     <system:String x:Key="TaskbarWidgetPosition">小组件位置</system:String>
     <system:String x:Key="TaskbarWidgetPaddingTitle">为 Windows 小组件按钮添加间距</system:String>
     <system:String x:Key="TaskbarWidgetPaddingDescription">如果你启用了 Windows 小组件，请启用此选项</system:String>
-    <system:String x:Key="TaskbarWidgetClickableTitle">有播放中的媒体时点击打开媒体浮窗</system:String>
-    <system:String x:Key="TaskbarWidgetClickableDescription">如果启用了媒体浮窗，点击小组件时它将会被打开</system:String>
+    <system:String x:Key="TaskbarWidgetClickableTitle">有播放中的媒体时如何交互以打开媒体浮窗</system:String>
+    <system:String x:Key="TaskbarWidgetClickableDescription">如果启用了媒体浮窗，选择如何与小组件交互时它将会被打开</system:String>
+    <system:String x:Key="TaskbarWidgetTrigger_None">不打开</system:String>
+    <system:String x:Key="TaskbarWidgetTrigger_OnHover">鼠标悬浮打开</system:String>
+    <system:String x:Key="TaskbarWidgetTrigger_Clicked">点击打开</system:String>
     <system:String x:Key="TaskbarWidgetBackgroundBlurDescription">为任务栏小组件添加背景模糊效果</system:String>
     <system:String x:Key="TaskbarWidgetHideCompletelyTitle">当没有播放中的媒体时完全隐藏</system:String>
     <system:String x:Key="TaskbarWidgetHideCompletelyDescription">当没有可用媒体时完全隐藏小组件，而不是显示一个媒体图标</system:String>
