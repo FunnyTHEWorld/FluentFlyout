@@ -9,7 +9,7 @@
       mc:Ignorable="d" 
       Height="50" Width="310"
       ResizeMode="NoResize"
-      WindowStyle="None" ShowInTaskbar="False"
+      WindowStyle="None" ShowInTaskbar="False" Topmost="True"
       SystemBackdropType="Mica" ChangeTitleColorWhenInactive="False"
       TextOptions.TextRenderingMode="ClearType" TextOptions.TextFormattingMode="Ideal"
       FontFamily="Segoe UI Variable, Microsoft YaHei, Microsoft JhengHei, MS Gothic"
