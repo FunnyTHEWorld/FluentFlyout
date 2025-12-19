@@ -187,7 +187,7 @@ public partial class TaskbarWindow : Window
 
     private void Grid_MouseLeave(object sender, MouseEventArgs e)
     {
-        if (SettingsManager.Current.TaskbarWidgetTriggerType != 0 || String.IsNullOrEmpty(SongTitle.Text + SongArtist.Text)) return;
+        if (SettingsManager.Current.TaskbarWidgetTriggerType == 0 || String.IsNullOrEmpty(SongTitle.Text + SongArtist.Text)) return;
 
         // Animate back to transparent
         var backgroundAnimation = new ColorAnimation
@@ -218,7 +218,6 @@ public partial class TaskbarWindow : Window
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.ShowMediaFlyout();
         }
-        else return;
     }
 
     private void SetupWindow()
