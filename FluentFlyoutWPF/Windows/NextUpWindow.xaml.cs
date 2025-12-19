@@ -40,8 +40,8 @@ public partial class NextUpWindow : MicaWindow
         var artistWidth = StringWidth.GetStringWidth(artist);
         string? UpNextText = Application.Current.FindResource("NextUpWindow_UpNextText") as string;
         var UpNextTitleWidth = StringWidth.GetStringWidth(UpNextText) + 14;
-        if (titleWidth > artistWidth) Width = titleWidth + UpNextTitleWidth + 86;
-        else Width = artistWidth + UpNextTitleWidth + 86;
+        var maxContentWidth = titleWidth > artistWidth ? titleWidth : artistWidth;
+        Width = maxContentWidth + UpNextTitleWidth + 86;
         if (Width > 400) Width = 400; // max width to prevent window from being too wide
         double titleTransX = -(Width / 2) + (UpNextTitleWidth / 2) + 12;
         double backgroundTransX = -(Width / 2);
@@ -50,7 +50,11 @@ public partial class NextUpWindow : MicaWindow
         SongImage.ImageSource = thumbnail;
         if (SongImage.ImageSource == null)
             SongImagePlaceholder.Visibility = Visibility.Visible;
-        else { SongImagePlaceholder.Visibility = Visibility.Collapsed; BackgroundGradientStopColor.Color = ImageHelper.GetDominantColor(thumbnail); }
+        else
+        {
+            SongImagePlaceholder.Visibility = Visibility.Collapsed;
+            BackgroundGradientStopColor.Color = ImageHelper.GetDominantColor(thumbnail);
+        }
         Show();
         mainWindow.OpenAnimation(this);
         double duration = mainWindow.getDuration();
@@ -122,7 +126,7 @@ public partial class NextUpWindow : MicaWindow
         }
 
         // Title Y
-        AddAnim("TitleTranslate", "Y", 30, -2, 1.5, 0, new CircleEase { EasingMode = EasingMode.EaseOut });
+        AddAnim("TitleTranslate", "Y", 30, -2, 1.2, 0, new CircleEase { EasingMode = EasingMode.EaseOut });
         // Title Scale
         AddAnim("TitleScale", "ScaleX", null, 1.3, 1.1, 0, new CubicEase { EasingMode = EasingMode.EaseOut });
         AddAnim("TitleScale", "ScaleY", null, 1.3, 1.1, 0, new CubicEase { EasingMode = EasingMode.EaseOut });
@@ -130,18 +134,18 @@ public partial class NextUpWindow : MicaWindow
         AddAnim("NextTitle", "Opacity", 0, 1, 0.8, 0);
         // Title blur
         var startTimePoint1 = 0.2;
-        AddAnim("TitleBlur", "Radius", 8, 0, 1.2, startTimePoint1*durationRatio, new CubicEase { EasingMode = EasingMode.EaseOut });
+        AddAnim("TitleBlur", "Radius", 8, 0, 1, startTimePoint1*durationRatio, new CubicEase { EasingMode = EasingMode.EaseOut });
 
         // Background
-        AddAnim("BackgroundTranslate", "Y", 20, 0, 1.5, 0, new CubicEase { EasingMode = EasingMode.EaseOut });
+        AddAnim("BackgroundTranslate", "Y", 20, 0, 1.1, 0, new CubicEase { EasingMode = EasingMode.EaseOut });
         AddAnim("BackgroundScale", "ScaleX", 0, 1, 2, 0, new CubicEase { EasingMode = EasingMode.EaseOut });
         AddAnim("BackgroundScale", "ScaleY", 0, 1, 2, 0, new CubicEase { EasingMode = EasingMode.EaseOut });
         AddAnim("BackgroundBorder", "Opacity", 0, 1, 1, 0);
-        var startTimePoint2 = 1.2*durationRatio;
-        AddAnim("BackgroundBorder", "Opacity", null, 0, 2.5, startTimePoint2); // fade out
-        AddAnim("BackgroundTranslate", "X", 0, backgroundTranslateXTo, 1.5,startTimePoint2, new CubicEase { EasingMode = EasingMode.EaseIn });
+        var startTimePoint2 = 0.8*durationRatio;
+        AddAnim("BackgroundBorder", "Opacity", null, 0, 2, startTimePoint2); // fade out
+        AddAnim("BackgroundTranslate", "X", 0, backgroundTranslateXTo, 1.2,startTimePoint2, new CubicEase { EasingMode = EasingMode.EaseIn });
        
-        var startTimePoint3 = 1.3 * durationRatio;
+        var startTimePoint3 = 1 * durationRatio;
         // Title scale back
         AddAnim("TitleScale", "ScaleX", null, 1, 0.5, startTimePoint3, new CubicEase { EasingMode = EasingMode.EaseOut });
         AddAnim("TitleScale", "ScaleY", null, 1, 0.5, startTimePoint3, new CubicEase { EasingMode = EasingMode.EaseOut });
@@ -154,7 +158,7 @@ public partial class NextUpWindow : MicaWindow
 
 
         // Image
-        var startTimePoint4 = 1.8;
+        var startTimePoint4 = 1.5;
         AddAnim("SongImageBorder", "Opacity", null, 1, 0.5, startTimePoint4*durationRatio);
         AddAnim("ImageTranslate", "X", 40, 0, 0.8, startTimePoint4*durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
         AddAnim("ImageScale", "ScaleX", 0.5, 1, 0.5, startTimePoint4 * durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
@@ -162,7 +166,7 @@ public partial class NextUpWindow : MicaWindow
         AddAnim("ImageBlur", "Radius", 8, 0, 0.8, startTimePoint4 * durationRatio);
 
         // Info
-        var startTimePoint5 = 2;
+        var startTimePoint5 = 1.7;
         AddAnim("SongInfoStackPanel", "Opacity", null, 1, 0.5, startTimePoint5*durationRatio);
         AddAnim("InfoTranslate", "X", 40, 0, 0.8, startTimePoint4 * durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
         AddAnim("InfoScale", "ScaleX", 0.5, 1, 0.5, startTimePoint4 * durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
