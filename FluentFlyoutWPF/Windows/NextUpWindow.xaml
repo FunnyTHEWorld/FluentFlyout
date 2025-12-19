@@ -31,116 +31,12 @@
                         </DoubleAnimation>
                     </Storyboard>
                 </BeginStoryboard>
-                <BeginStoryboard>
-                    <Storyboard>
-                        <DoubleAnimation Storyboard.TargetName="TitleTranslate" Storyboard.TargetProperty="Y" From="30" To="-2" Duration="0:0:1.5" BeginTime="0:0:0">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="TitleScale" Storyboard.TargetProperty="ScaleX" To="1.3" Duration="0:0:1.1" BeginTime="0:0:0">
-                            <DoubleAnimation.EasingFunction>
-                                <CubicEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="TitleScale" Storyboard.TargetProperty="ScaleY" To="1.3" Duration="0:0:1.1" BeginTime="0:0:0">
-                            <DoubleAnimation.EasingFunction>
-                                <CubicEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="NextTitle" Storyboard.TargetProperty="Opacity" From="0" To="1"  Duration="0:0:0.8" BeginTime="0:0:0"/>
-                        <DoubleAnimation Storyboard.TargetName="TitleBlur" Storyboard.TargetProperty="Radius" From="8" To="0" Duration="0:0:1.2" BeginTime="0:0:0.2">
-                            <DoubleAnimation.EasingFunction>
-                                <CubicEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="BackgroundTranslate" Storyboard.TargetProperty="Y" From="20" To="0" Duration="0:0:2" BeginTime="0:0:0">
-                            <DoubleAnimation.EasingFunction>
-                                <CubicEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="BackgroundScale" Storyboard.TargetProperty="ScaleX" From="0" To="1" Duration="0:0:2" BeginTime="0:0:0">
-                            <DoubleAnimation.EasingFunction>
-                                <CubicEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="BackgroundScale" Storyboard.TargetProperty="ScaleY" From="0" To="1" Duration="0:0:2" BeginTime="0:0:0">
-                            <DoubleAnimation.EasingFunction>
-                                <CubicEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="BackgroundBorder" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:1" BeginTime="0:0:0">
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="BackgroundBorder" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:2.5" BeginTime="0:0:1.5"/>
-                        <DoubleAnimation Storyboard.TargetName="BackgroundTranslate" x:Name="BackgroundTrans" Storyboard.TargetProperty="X" From="0" Duration="0:0:2" BeginTime="0:0:1.2">
-                            <DoubleAnimation.EasingFunction>
-                                <CubicEase EasingMode="EaseIn"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="TitleScale" Storyboard.TargetProperty="ScaleX" To="1" Duration="0:0:0.5" BeginTime="0:0:1.5">
-                            <DoubleAnimation.EasingFunction>
-                                <CubicEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="TitleScale" Storyboard.TargetProperty="ScaleY" To="1" Duration="0:0:0.5" BeginTime="0:0:1.5">
-                            <DoubleAnimation.EasingFunction>
-                                <CubicEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="TitleTranslate" x:Name="TitleTrans" Storyboard.TargetProperty="X" Duration="0:0:1" BeginTime="0:0:1.5">
-                            <DoubleAnimation.EasingFunction>
-                                <CubicEase EasingMode="EaseInOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="TitleTranslate" Storyboard.TargetProperty="Y" To="0" Duration="0:0:1" BeginTime="0:0:1.7">
-                            <DoubleAnimation.EasingFunction>
-                                <CubicEase EasingMode="EaseInOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="SongImageBorder" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.5" BeginTime="0:0:2"/>
-                        <DoubleAnimation Storyboard.TargetName="ImageTranslate" Storyboard.TargetProperty="X" From="40" To="0" Duration="0:0:0.8" BeginTime="0:0:2">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="ImageScale" Storyboard.TargetProperty="ScaleX" From="0.5" To="1" Duration="0:0:0.5" BeginTime="0:0:2">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="ImageScale" Storyboard.TargetProperty="ScaleY" From="0.5" To="1" Duration="0:0:0.5" BeginTime="0:0:2">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="ImageBlur" Storyboard.TargetProperty="Radius" From="8" To="0" Duration="0:0:0.8" BeginTime="0:0:2"/>
-
-
-                        <DoubleAnimation Storyboard.TargetName="SongInfoStackPanel" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.5" BeginTime="0:0:2.2"/>
-                        <DoubleAnimation Storyboard.TargetName="InfoTranslate" Storyboard.TargetProperty="X" From="40" To="0" Duration="0:0:0.8" BeginTime="0:0:2.2">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="InfoScale" Storyboard.TargetProperty="ScaleX" From="0.5" To="1" Duration="0:0:0.5" BeginTime="0:0:2.2">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="InfoScale" Storyboard.TargetProperty="ScaleY" From="0.5" To="1" Duration="0:0:0.5" BeginTime="0:0:2.2">
-                            <DoubleAnimation.EasingFunction>
-                                <CircleEase EasingMode="EaseOut"/>
-                            </DoubleAnimation.EasingFunction>
-                        </DoubleAnimation>
-                        <DoubleAnimation Storyboard.TargetName="InfoBlur" Storyboard.TargetProperty="Radius" From="8" To="0" Duration="0:0:0.8" BeginTime="0:0:2.2"/>
-                    </Storyboard>
-                </BeginStoryboard>
             </EventTrigger.Actions>
         </EventTrigger>
     </Window.Triggers>
 
     <Grid>
-        <Border VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Stretch" Name="BackgroundBorder" Margin="-100">
+        <Border VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Stretch" x:Name="BackgroundBorder" Margin="-100">
             <Border.Background>
                 <RadialGradientBrush Center="0.5,0.5" GradientOrigin="0.5,0.5"  RadiusX="0.6" RadiusY="1.5" Opacity="1">
                     <GradientStop Color="#ffffffff" x:Name="BackgroundGradientStopColor" Offset="0"/>
@@ -161,7 +57,7 @@
                 <ColumnDefinition Width="50"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Border Grid.Column="1" Name="SongImageBorder" RenderTransformOrigin="0.5,0.5" CornerRadius="6" Margin="2" HorizontalAlignment="Center" ClipToBounds="True" Width="38" Height="38" Opacity="0">
+            <Border Grid.Column="1" x:Name="SongImageBorder" RenderTransformOrigin="0.5,0.5" CornerRadius="6" Margin="2" HorizontalAlignment="Center" ClipToBounds="True" Width="38" Height="38" Opacity="0">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <TranslateTransform x:Name="ImageTranslate" Y="0"/>
@@ -176,7 +72,7 @@
                     <BlurEffect  KernelType="Gaussian" Radius="6" x:Name="ImageBlur"/>
                 </Border.Effect>
             </Border>
-            <StackPanel Grid.Column="2" RenderTransformOrigin="0.5,0.5" Name="SongInfoStackPanel" Margin="6,0,0,0" Orientation="Vertical" VerticalAlignment="Center" Opacity="0">
+            <StackPanel Grid.Column="2" RenderTransformOrigin="0.5,0.5" x:Name="SongInfoStackPanel" Margin="6,0,0,0" Orientation="Vertical" VerticalAlignment="Center" Opacity="0">
                 <StackPanel.RenderTransform>
                     <TransformGroup>
                         <TranslateTransform Y="0" x:Name="InfoTranslate"/>
