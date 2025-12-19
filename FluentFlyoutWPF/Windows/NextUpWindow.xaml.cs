@@ -133,28 +133,28 @@ public partial class NextUpWindow : MicaWindow
         AddAnim("TitleBlur", "Radius", 8, 0, 1.2, startTimePoint1*durationRatio, new CubicEase { EasingMode = EasingMode.EaseOut });
 
         // Background
-        AddAnim("BackgroundTranslate", "Y", 20, 0, 2, 0, new CubicEase { EasingMode = EasingMode.EaseOut });
+        AddAnim("BackgroundTranslate", "Y", 20, 0, 1.5, 0, new CubicEase { EasingMode = EasingMode.EaseOut });
         AddAnim("BackgroundScale", "ScaleX", 0, 1, 2, 0, new CubicEase { EasingMode = EasingMode.EaseOut });
         AddAnim("BackgroundScale", "ScaleY", 0, 1, 2, 0, new CubicEase { EasingMode = EasingMode.EaseOut });
         AddAnim("BackgroundBorder", "Opacity", 0, 1, 1, 0);
-        var startTimePoint2 = 1.5*durationRatio;
+        var startTimePoint2 = 1.2*durationRatio;
         AddAnim("BackgroundBorder", "Opacity", null, 0, 2.5, startTimePoint2); // fade out
-        AddAnim("BackgroundTranslate", "X", 0, backgroundTranslateXTo, 2,startTimePoint2, new CubicEase { EasingMode = EasingMode.EaseIn });
-
+        AddAnim("BackgroundTranslate", "X", 0, backgroundTranslateXTo, 1.5,startTimePoint2, new CubicEase { EasingMode = EasingMode.EaseIn });
+       
+        var startTimePoint3 = 1.3 * durationRatio;
         // Title scale back
-        AddAnim("TitleScale", "ScaleX", null, 1, 0.5, startTimePoint2, new CubicEase { EasingMode = EasingMode.EaseOut });
-        AddAnim("TitleScale", "ScaleY", null, 1, 0.5, startTimePoint2, new CubicEase { EasingMode = EasingMode.EaseOut });
+        AddAnim("TitleScale", "ScaleX", null, 1, 0.5, startTimePoint3, new CubicEase { EasingMode = EasingMode.EaseOut });
+        AddAnim("TitleScale", "ScaleY", null, 1, 0.5, startTimePoint3, new CubicEase { EasingMode = EasingMode.EaseOut });
 
         // Title Y back to 0
-        var startTimePoint3 = 1.7 * durationRatio;
         AddAnim("TitleTranslate", "Y", null, 0, 1, startTimePoint3, new CubicEase { EasingMode = EasingMode.EaseInOut });
 
         // Note: Original had TitleTranslate.X animation with no From/To → skip (no effect)
-        AddAnim("TitleTranslate", "X", 0, titleTranslateXTo, 1, startTimePoint3, new CubicEase { EasingMode = EasingMode.EaseInOut });
+        AddAnim("TitleTranslate", "X", 0, titleTranslateXTo, 1.2, startTimePoint3, new CubicEase { EasingMode = EasingMode.EaseInOut });
 
 
         // Image
-        var startTimePoint4 = 2;
+        var startTimePoint4 = 1.8;
         AddAnim("SongImageBorder", "Opacity", null, 1, 0.5, startTimePoint4*durationRatio);
         AddAnim("ImageTranslate", "X", 40, 0, 0.8, startTimePoint4*durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
         AddAnim("ImageScale", "ScaleX", 0.5, 1, 0.5, startTimePoint4 * durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
@@ -162,7 +162,7 @@ public partial class NextUpWindow : MicaWindow
         AddAnim("ImageBlur", "Radius", 8, 0, 0.8, startTimePoint4 * durationRatio);
 
         // Info
-        var startTimePoint5 = 2.2;
+        var startTimePoint5 = 2;
         AddAnim("SongInfoStackPanel", "Opacity", null, 1, 0.5, startTimePoint5*durationRatio);
         AddAnim("InfoTranslate", "X", 40, 0, 0.8, startTimePoint4 * durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
         AddAnim("InfoScale", "ScaleX", 0.5, 1, 0.5, startTimePoint4 * durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
