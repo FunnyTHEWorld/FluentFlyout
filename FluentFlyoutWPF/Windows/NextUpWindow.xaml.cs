@@ -168,10 +168,10 @@ public partial class NextUpWindow : MicaWindow
         // Info
         var startTimePoint5 = 1.7;
         AddAnim("SongInfoStackPanel", "Opacity", null, 1, 0.5, startTimePoint5*durationRatio);
-        AddAnim("InfoTranslate", "X", 40, 0, 0.8, startTimePoint4 * durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
-        AddAnim("InfoScale", "ScaleX", 0.5, 1, 0.5, startTimePoint4 * durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
-        AddAnim("InfoScale", "ScaleY", 0.5, 1, 0.5, startTimePoint4 * durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
-        AddAnim("InfoBlur", "Radius", 8, 0, 0.8, startTimePoint4 * durationRatio);
+        AddAnim("InfoTranslate", "X", 40, 0, 0.8, startTimePoint5 * durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
+        AddAnim("InfoScale", "ScaleX", 0.5, 1, 0.5, startTimePoint5 * durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
+        AddAnim("InfoScale", "ScaleY", 0.5, 1, 0.5, startTimePoint5 * durationRatio, new CircleEase { EasingMode = EasingMode.EaseOut });
+        AddAnim("InfoBlur", "Radius", 8, 0, 0.8, startTimePoint5 * durationRatio);
         storyboard.Begin(this);
 
     }

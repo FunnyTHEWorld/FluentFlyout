@@ -10,8 +10,13 @@ namespace FluentFlyoutWPF.Classes
     {
         public static Color GetDominantColor(BitmapSource bitmapSource)
         {
+            
+            if (bitmapSource == null)
+                {
+                    return Colors.Gray;
+                }
             var resized = new TransformedBitmap(bitmapSource,
-                new ScaleTransform(100.0 / bitmapSource.PixelWidth,
+            new ScaleTransform(100.0 / bitmapSource.PixelWidth,
                                    100.0 / bitmapSource.PixelHeight));
             var converted = new FormatConvertedBitmap(resized, PixelFormats.Bgra32, null, 0);
 
@@ -36,7 +41,7 @@ namespace FluentFlyoutWPF.Classes
             return first;
         }
 
-        #region 
+        #region Custom Helper Methods
         private static Color GetAverageColor(byte[] pixels, out int validCount)
         {
             long r = 0, g = 0, b = 0;
