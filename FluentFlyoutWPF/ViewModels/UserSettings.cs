@@ -311,7 +311,45 @@ public partial class UserSettings : ObservableObject
     public partial bool TaskbarWidgetPadding { get; set; }
 
     /// <summary>
-    /// Gets or sets a value indicating whether the taskbar widget is clickable
+    /// Determines whether the custom padding width should be applied to the taskbar widget for the custom Taskbar Widgets
+    /// </summary>
+    [ObservableProperty]
+    public partial bool IsCustomTaskbarWidgetPaddingOn { get; set; }
+
+    /// <summary>
+    /// Determines the custom padding width that applied to the taskbar widget for the custom Taskbar Widgets
+    /// </summary>
+
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(CustomTaskbarWidgetPaddingPixels))]
+    public partial int CustomTaskbarWidgetPaddingPixels { get; set; }
+
+    [XmlIgnore]
+    public string CustomTaskbarWidgetPaddingPixelsText
+    {
+        get => CustomTaskbarWidgetPaddingPixels.ToString();
+        set
+        {
+            if (int.TryParse(value, out var result))
+            {
+                CustomTaskbarWidgetPaddingPixels = result switch
+                {
+                    > 10000 => 10000,
+                    < 2 => 2,
+                    _ => result
+                };
+            }
+            else
+            {
+                CustomTaskbarWidgetPaddingPixels = 216;
+            }
+
+            OnPropertyChanged();
+        }
+    }
+
+    /// <summary>
+    /// Gets or sets a value indicating the triggertype of the taskbar widget
     /// </summary>
     [ObservableProperty]
     public partial bool TaskbarWidgetClickable { get; set; }
@@ -399,6 +437,8 @@ public partial class UserSettings : ObservableObject
         TaskbarWidgetPadding = true;
         TaskbarWidgetClickable = true;
         TaskbarWidgetBackgroundBlur = false;
+        IsCustomTaskbarWidgetPaddingOn = false;
+        CustomTaskbarWidgetPaddingPixels = 216;
         TaskbarWidgetHideCompletely = false;
         TaskbarWidgetControlsEnabled = false;
         TaskbarWidgetAnimated = true;

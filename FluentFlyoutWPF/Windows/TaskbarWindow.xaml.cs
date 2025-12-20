@@ -73,6 +73,7 @@ public partial class TaskbarWindow : Window
     private readonly DispatcherTimer _timer;
     private readonly SolidColorBrush _hitTestTransparent;
     private readonly int _nativeWidgetsPadding = 216;
+    private int _nativeWidgetsCustomPadding = 100;
     private readonly double _scale = 0.9;
 
     // unused for now
@@ -331,26 +332,32 @@ public partial class TaskbarWindow : Window
         int physicalTop = (taskbarHeight - physicalHeight) / 2;
 
         int physicalLeft = 0;
+        _nativeWidgetsCustomPadding = SettingsManager.Current.CustomTaskbarWidgetPaddingPixels;
         switch (SettingsManager.Current.TaskbarWidgetPosition)
         {
             case 0: // left aligned with some padding (like native widgets)
                 physicalLeft = 20;
                 if (SettingsManager.Current.TaskbarWidgetPadding) // automatic widget padding to the left
                 {
-                    try
+                    if (SettingsManager.Current.IsCustomTaskbarWidgetPaddingOn) physicalLeft += _nativeWidgetsCustomPadding + 2;
+                    else
                     {
-                        // find widget button in XAML
-                        (bool found, Rect widgetRect) = GetTaskbarWidgetRect(taskbarHandle);
+                        try
+                        {
+                            // find widget button in XAML
+                            (bool found, Rect widgetRect) = GetTaskbarWidgetRect(taskbarHandle);
 
-                        // make sure it's on the left side, otherwise ignore (widget might be to the right)
-                        if (found && widgetRect.Right < taskbarRect.Right / 2)
-                            physicalLeft = (int)(widgetRect.Right) + 2; // add small padding
-                    }
-                    catch (Exception ex)
-                    {
-                        // fallback to default padding
-                        Logger.Warn(ex, "Failed to get Widgets button position.");
-                        physicalLeft += _nativeWidgetsPadding + 2;
+                            // make sure it's on the left side, otherwise ignore (widget might be to the right)
+                            if (found && widgetRect.Right < taskbarRect.Right / 2)
+                                physicalLeft = (int)(widgetRect.Right) + 2; // add small padding
+                        }
+                        catch (Exception ex)
+                        {
+                            // fallback to default padding
+                            Logger.Warn(ex, "Failed to get Widgets button position.");
+                            physicalLeft += _nativeWidgetsPadding + 2;
+                        }
+
                     }
                 }
                 break;
