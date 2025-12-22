@@ -43,7 +43,9 @@
     <system:String x:Key="EnableNextUpTitle">启用 “接下来” 浮窗（实验性）</system:String>
     <system:String x:Key="EnableNextUpDescription">显示当前歌曲 / 视频结束后的下一项内容</system:String>
     <system:String x:Key="NextUpStayDurationTitle">“接下来” 浮窗停留时间</system:String>
-    <system:String x:Key="NextUpStayDurationDescription">（默认：3000 毫秒, 在1x动画速率下需大于2500毫秒以展示完整动画）</system:String>
+    <system:String x:Key="NextUpStayDurationDescription">（默认：2500 毫秒）</system:String>
+    <system:String x:Key="NextUpAdvancedAnimation">为“接下来” 浮窗启用华丽动画</system:String>
+    <system:String x:Key="NextUpAdvancedAnimationDescription">为“接下来” 浮窗启用带有模糊效果的华丽动画，关闭此项可提前显示歌曲信息并节省性能开销</system:String>
     <system:String x:Key="LockKeysCustomizationTitle">键盘锁定键浮窗自定义设置</system:String>
     <system:String x:Key="LockKeysDescription" xml:space="preserve">快速查看键盘锁定键状态。按下大写锁定键、数字锁定键或滚动锁定键后显示。对于没有锁定键指示灯的笔记本电脑 / 键盘来说很实用。</system:String>
     <system:String x:Key="EnableLockKeysTitle">启用键盘锁定键浮窗</system:String>

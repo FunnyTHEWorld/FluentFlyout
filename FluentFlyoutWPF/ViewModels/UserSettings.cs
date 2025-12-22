@@ -119,7 +119,7 @@ public partial class UserSettings : ObservableObject
                 NextUpDuration = result switch
                 {
                     > 10000 => 10000,
-                    < 2500 => 2500,
+                    < 2000 => 2000,
                     _ => result
                 };
             }
@@ -131,6 +131,12 @@ public partial class UserSettings : ObservableObject
             OnPropertyChanged();
         }
     }
+
+    /// <summary>
+    /// Enable the 'Next Up' Advaned animation
+    /// </summary>
+    [ObservableProperty]
+    public partial bool IsNextUpAdvancedAnimationEnabled { get; set; }
 
     /// <summary>
     /// Tray icon left-click behavior
@@ -393,6 +399,7 @@ public partial class UserSettings : ObservableObject
         MediaFlyoutAcrylicWindowEnabled = true;
         AppLanguage = "system";
         NextUpAcrylicWindowEnabled = true;
+        IsNextUpAdvancedAnimationEnabled = true;
         LockKeysAcrylicWindowEnabled = true;
         TaskbarWidgetEnabled = false;
         TaskbarWidgetPosition = 0;
