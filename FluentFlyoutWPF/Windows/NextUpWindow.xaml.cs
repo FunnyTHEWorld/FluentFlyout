@@ -36,7 +36,6 @@ public partial class NextUpWindow : MicaWindow
             WindowBlurHelper.DisableBlur(this);
         }
 
-        var upNextWidth = StringWidth.GetStringWidth(UpNextTextBlock.Text);
         var titleWidth = StringWidth.GetStringWidth(title);
         var artistWidth = StringWidth.GetStringWidth(artist);
         string? UpNextText = Application.Current.FindResource("NextUpWindow_UpNextText") as string;
@@ -46,6 +45,7 @@ public partial class NextUpWindow : MicaWindow
         if (Width > 400) Width = 400; // max width to prevent window from being too wide
         double titleTransX = -(Width / 2) + (UpNextTitleWidth / 2) + 12;
         double backgroundTransX = -(Width / 2);
+        TitleColumn.Width = new GridLength(UpNextTitleWidth);
         SongTitle.Text = title;
         SongArtist.Text = artist;
         SongImage.ImageSource = thumbnail;
@@ -175,5 +175,11 @@ public partial class NextUpWindow : MicaWindow
         AddAnim("InfoBlur", "Radius", 8, 0, 0.7, startTimePoint5 * durationRatio);
         storyboard.Begin(this);
 
+    }
+    public void UpdateThumbnail(BitmapImage thumbnail)
+    {
+        SongImage.ImageSource = thumbnail;
+        if (SongImage.ImageSource == null) SongImagePlaceholder.Visibility = Visibility.Visible;
+        else SongImagePlaceholder.Visibility = Visibility.Collapsed;
     }
 }
