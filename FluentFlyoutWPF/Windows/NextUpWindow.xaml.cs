@@ -36,6 +36,7 @@ public partial class NextUpWindow : MicaWindow
             WindowBlurHelper.DisableBlur(this);
         }
 
+        var upNextWidth = StringWidth.GetStringWidth(UpNextTextBlock.Text);
         var titleWidth = StringWidth.GetStringWidth(title);
         var artistWidth = StringWidth.GetStringWidth(artist);
         string? UpNextText = Application.Current.FindResource("NextUpWindow_UpNextText") as string;
